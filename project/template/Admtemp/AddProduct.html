@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+  form{
+  padding:50px;
+}
+</style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
+<body>
+<script>
+var stateObject = {
+"Men": { "New Arrival Mens": ["Mens Pant's", "Mens Shirt", "Mens Footwear", "Mens Casual Wear", "Mens Watches", "Caps&Hats men", "Bags Men", "Accessories Men", "Wallet Mens", "Jwellery Mens", "Sunglasses men"],"40% Men": ["Mens Pant's", "Mens Shirt", "Mens Footwear", "Mens Casual Wear", "Mens Watches", "Caps&Hats men", "Bags Men", "Accessories Men", "Wallet Mens", "Jwellery Mens", "Sunglasses men", "Perfumes Men", "Beuty Men", "Local Wear's Men"],"50% Men": ["Mens Pant's", "Mens Shirt", "Mens Footwear", "Mens Casual Wear", "Mens Watches", "Caps&Hats men", "Bags Men", "Accessories Men", "Wallet Mens", "Jwellery Mens", "Sunglasses men"],"Summer Discount men": ["Mens Pant's", "Mens Shirt", "Mens Footwear", "Mens Casual Wear", "Mens Watches", "Caps&Hats men", "Bags Men", "Accessories Men", "Wallet Mens", "Jwellery Mens", "Sunglasses men"],"Flat Discounts Men": ["Mens Pant's", "Mens Shirt", "Mens Footwear", "Mens Casual Wear", "Mens Watches", "Caps&Hats men", "Bags Men", "Accessories Men", "Wallet Mens", "Jwellery Mens", "Sunglasses men"]
+},
+"Women": { "New Arrival Womens": ["Ladies Watch", "Ladies Footwear", "Ladies Casual Wear", "Ladies Pant's", "Kurtha", "Caps&Hats Women", "Bags Ladies", "Accessories Women", "Wallet Womens", "Jwellery womens", "Sunglasses women"],"40% Women": ["Ladies Watch", "Ladies Footwear", "Ladies Casual Wear", "Ladies Pant's", "Kurtha", "Caps&Hats Women", "Bags Ladies", "Accessories Women", "Wallet Womens", "Jwellery womens", "Sunglasses women", "Perfumes Women", "Beuty Women", "Local Wear's Women"],"50% Women": ["Ladies Watch", "Ladies Footwear", "Ladies Casual Wear", "Ladies Pant's", "Kurtha", "Caps&Hats Women", "Bags Ladies", "Accessories Women", "Wallet Womens", "Jwellery womens", "Sunglasses women"],"Summer Discount w": ["Ladies Watch", "Ladies Footwear", "Ladies Casual Wear", "Ladies Pant's", "Kurtha", "Caps&Hats Women", "Bags Ladies", "Accessories Women", "Wallet Womens", "Jwellery womens", "Sunglasses women"],"Flat Discounts Women":["Ladies Watch", "Ladies Footwear", "Ladies Casual Wear", "Ladies Pant's", "Kurtha", "Caps&Hats Women", "Bags Ladies", "Accessories Women", "Wallet Womens", "Jwellery womens", "Sunglasses women"]
+},
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+}
+}
+}
+</script>
+<div class="container">
+<div style="float:right ; position:relative;top:50px;">
+
+
+
+
+    </div>
+        <a href="ssadmin" style="position:relative;top:20px;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><i class="fa fa-angle-left">Go Back</i> </a>
+
+
+<form method="post" action="ssaddprod" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group col-md-4">
+<label for="countySel"><b>Section</b></label><br> <select class="form-control" name="Section" id="countySel" size="1">
+<option class="form-control" value="" selected="selected" required>Select Section</option>
+</select>
+<br>
+<br>
+<label for="stateSel"><b>Offer</b></label><br> <select class="form-control" name="Offer" id="stateSel" size="1">
+<option class="form-control" value="" selected="selected" required>Please select Section first</option>
+</select>
+<br>
+<br>
+<label for="districtSel"><b>Category</b></label><br> <select class="form-control" name="Category" id="districtSel" size="1">
+<option  class="form-control" value="" selected="selected" required>Please select Offer first</option>
+</select><br><br>
+<br>
+<br>
+    </div>
+  <div class="form-group col-md-4">
+      <label for="inputZip"><b>Variant</b></label><br>
+      <h3>For Shirts/Pants/Dress:</h3>
+        X-Large:
+        <input type="checkbox" name="sise"  value="X-Large" ><br>
+        X-Small:
+        <input type="checkbox" name="sise"  value="X-Small" ><br>
+        Small:
+        <input type="checkbox" name="sise"  value="Small" ><br>
+        Large:
+        <input type="checkbox" name="sise" value="Large" ><br>
+      <h3>Accessories/Sunglasses/Bags/Caps&Hats/Watches/Wallets:</h3>
+        Small:
+        <input type="checkbox" name="sise"  value="Small" ><br>
+        Large:
+        <input type="checkbox" name="sise" value="Large" ><br>
+      <h3>Sunglassess/Jwellery:</h3>
+       18:
+        <input type="checkbox" name="sise"  value="18" ><br>
+        20:
+        <input type="checkbox" name="sise"  value="20" ><br>
+        28:
+        <input type="checkbox" name="sise"  value="28" ><br>
+        30:
+        <input type="checkbox" name="sise" value="30" ><br>
+      <h3>Shoes/Footwears:</h3>
+        7:
+        <input type="checkbox" name="sise"  value="7" ><br>
+        8:
+        <input type="checkbox" name="sise"  value="8" ><br>
+        9:
+        <input type="checkbox" name="sise"  value="9" ><br>
+        10:
+        <input type="checkbox" name="sise" value="10" ><br>
+    </div>
+  <div class="form-group col-md-4">
+      <label for="inputZip"><b>Name</b></label>
+      <input type="text" name="name" class="form-control" id="inputZip" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip"><b>Brand Name</b></label>
+      <input type="text" name="brand" class="form-control" id="inputZip" required>
+    </div>
+  <div class="form-group col-md-2">
+      <label for="inputZip"><b>Price</b></label>
+      <input type="text" name="price" class="form-control" id="inputZip" required>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip"><b>discount Price</b></label>
+      <input type="text" name="dprice" class="form-control" id="inputZip" required>
+    </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"><b>Image1</b></label>
+    <input type="file" name="img1" class="form-control-file" id="exampleFormControlFile1" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"><b>Image2</b></label>
+    <input type="file" name="img2" class="form-control-file" id="exampleFormControlFile1" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"><b>Image3</b></label>
+    <input type="file" name="img3" class="form-control-file" id="exampleFormControlFile1" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"><b>Discription</b></label>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" required></textarea>
+  </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    </div>
+</body>
+</html>

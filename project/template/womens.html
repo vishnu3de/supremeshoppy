@@ -1,0 +1,599 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+<title>Supreme Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | women's :: w3layouts</title>
+<!--/tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+<!--//tags -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!-- //for bootstrap working -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<!-- header -->
+<div class="header" id="home">
+	<div class="container">
+		<ul>
+		    <li> <i class="fa fa-unlock-alt" aria-hidden="true"></i> Hello,<b><strong>{{request.user}}</strong></b></li>
+			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+		</ul>
+	</div>
+</div>
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+	<div class="header-bot_inner_wthreeinfo_header_mid">
+		<div class="col-md-4 header-middle">
+			<form method="get" action="/search" >
+					<input name="query"  type="search"  placeholder="Search here..." required/>
+					<input type="submit" value=" ">
+					<div class="clearfix"></div>
+
+			</form>
+		</div>
+		<!-- header-bot -->
+			<div class="col-md-4 logo_agile">
+				<h1><a href="index"><span>S</span>upreme Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+			</div>
+        <!-- header-bot -->
+		<div class="col-md-4 agileits-social top_content">
+						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
+						                                   <li class="share">Share On : </li>
+															<li><a href="https://www.facebook.com" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.twitter.com" class="twitter">
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.instagram.com" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.pinterest.com" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
+
+
+
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+	<div class="container">
+			<div class="top_nav_left">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list">
+					<li class="active menu__item"><a class="menu__link" href="index">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="about">About</a></li>
+					<li class="dropdown menu__item">
+						<a href="mens" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men's wear <span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="agile_inner_drop_nav_info">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<a href="mens"><img src="{% static 'images/top2.jpg' %}" alt=" "/></a>
+									</div>
+									<div class="col-sm-3 multi-gd-img">
+										{% for cat in mcategory %}
+										{% for i in cat.category_set.all %}
+
+										<ul class="multi-column-dropdown">
+											<li><a href="/mens?category={{i.id}}">{{i.name}}</a></li>
+
+										</ul>
+										{% endfor %}
+										{% endfor %}
+									<div class="clearfix"></div>
+								</div>
+							 </ul>
+					</li>
+					<li class=" dropdown menu__item menu__item--current">
+						<a href="womens" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" >Women's wear <span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="agile_inner_drop_nav_info">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<a href="womens"><img src="{% static 'images/top1.jpg' %}" alt=" "/></a>
+									</div>
+									<div class="col-sm-3 multi-gd-img">
+										{% for cat in wcategory %}
+										{% for i in cat.category_set.all %}
+
+										<ul class="multi-column-dropdown">
+											<li><a href="/womens?category={{i.id}}">{{i.name}}</a></li>
+
+										</ul>
+										{% endfor %}
+										{% endfor %}
+									<div class="clearfix"></div>
+								</div>
+							 </ul>
+					</li>
+					<li class="menu__item dropdown">
+					<li class=" menu__item"><a class="menu__link" href="typography">Dashboard</a></li>
+					</li>
+					<li class=" menu__item"><a class="menu__link" href="contact">Contact</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+		</div>
+		<div class="top_nav_right">
+			<div class="wthreecartaits wthreecartaits2 cart cart box_1">
+						<form action="cart" method="post" class="last">
+							{% csrf_token %}
+						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+					<span class="badge badge-secondary">{{request.session.cart|length}}</span></form>
+						</div>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<!-- //banner-top -->
+<!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
+		<div class="container">
+
+			<h3>Women's <span>Wear  </span></h3>
+			<!--/w3_short-->
+				 <div class="services-breadcrumb">
+						<div class="agile_inner_breadcrumb">
+
+						   <ul class="w3_short">
+								<li><a href="index">Home</a><i>|</i></li>
+								<li>Women's Wear</li>
+							</ul>
+						 </div>
+				</div>
+	   <!--//w3_short-->
+	</div>
+</div>
+
+  <!-- banner-bootom-w3-agileits -->
+	<div class="banner-bootom-w3-agileits">
+	<div class="container">
+
+         <!-- mens -->
+
+		<div class="col-md-4 products-left">
+			<div class="filter-price">
+				<h3>Filter By <span>Price</span></h3>
+					<ul class="dropdown-menu6">
+						<li>
+							<div id="slider-range"></div>
+							<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+						</li>
+					</ul>
+			</div>
+
+			<div class="css-treeview">
+				<h4>Categories</h4>
+				<ul class="tree-list-pad">
+					{% for cat in wcategory %}
+					<li><input type="checkbox" checked="checked" id="item-0" value="{{cat.name}}" /><label for="item-0"><i  class="fa fa-long-arrow-right" aria-hidden="true"></i>Women's Wear </label>
+								<ul>
+									{% for i in cat.category_set.all %}
+									<li ><a href="/womens?category={{i.id}}">{{ i.name }}</a></li>
+									{% endfor %}
+								</ul>
+					</li>
+
+					{% for off in offer %}
+					<li><input type="checkbox" checked="checked" id="item-2" value="{{off.name}}" /><label for="item-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Best Offers</label>
+								<ul>
+									{% for i in soffer %}
+										<li><input type="checkbox"  id="item-2-0" /><label for="item-2-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{i.name}}</label>
+											<ul>
+												{% for j in cat.category_set.all %}
+												<li><a href="/womens?suboff={{i.id}}&subid={{j.id}}&off={{off.id}}">{{j.name}}</a></li>
+												{% endfor %}
+											</ul></li>
+									{% endfor %}
+									{% for i in soffer1 %}
+										<li><input type="checkbox"  id="item-2-1" /><label for="item-2-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{i.name}}</label>
+											<ul>
+												{% for j in cat.category_set.all %}
+												<li><a href="/womens?suboff={{i.id}}&subid={{j.id}}&off={{off.id}}">{{j.name}}</a></li>
+												{% endfor %}
+											</ul></li>
+
+									{% endfor %}
+									{% for i in soffer2 %}
+										<li><input type="checkbox"  id="item-2-2" /><label for="item-2-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{i.name}}</label>
+											<ul>
+												{% for j in cat.category_set.all %}
+												<li><a href="/womens?suboff={{i.id}}&subid={{j.id}}&off={{off.id}}">{{j.name}}</a></li>
+												{% endfor %}
+											</ul></li>
+									{% endfor %}
+									{% for i in soffer3 %}
+										<li><input type="checkbox"  id="item-2-3" /><label for="item-2-3"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{i.name}}</label>
+											<ul>
+												{% for j in cat.category_set.all %}
+												<li><a href="/womens?suboff={{i.id}}&subid={{j.id}}&off={{off.id}}">{{j.name}}</a></li>
+												{% endfor %}
+											</ul></li>
+									{% endfor %}
+									{% for i in soffer4 %}
+										<li><input type="checkbox"  id="item-2-4" /><label for="item-2-4"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{i.name}}</label>
+											<ul>
+												{% for j in cat.category_set.all %}
+												<li><a href="/womens?suboff={{i.id}}&subid={{j.id}}&off={{off.id}}">{{j.name}}</a></li>
+												{% endfor %}
+											</ul></li>
+									{% endfor %}
+								</ul>
+					</li>
+					{% endfor %}
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+
+			<div class="community-poll">
+{% if products %}
+				<h4>Sort By</h4>
+				<div class="swit form">
+					<div class="check_box"> <div class="radio"> <label><a href="womens"><a href="womens" style="color: gray"><input type="radio" name="radio" ><i></i>Default</a></label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><a href="/womens{% for i in products %}?ATOZ={{i.id}}{% endfor %}&categorys={% if cat %}{{cat}}{%else%}{{cats}}{% endif %}&subid={{subid}}&suboff={{suboff}}&off={{off}}" style="color: gray"><input  type="radio" name="radio"><i></i>A to Z</a></label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><a href="/womens{% for i in products %}?ZTOA={{i.id}}{% endfor %}&categorys={% if cat %}{{cat}}{%else%}{{cats}}{% endif %}&subid={{subid}}&suboff={{suboff}}&off={{off}}" style="color: gray"><input  type="radio" name="radio"><i></i>Z to A</a></label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><a href="/womens{% for i in products %}?PRICELowTOHigh={{i.id}}{% endfor %}&categorys={% if cat %}{{cat}}{%else%}{{cats}}{% endif %}&subid={{subid}}&suboff={{suboff}}&off={{off}}" style="color: gray"><input  type="radio" name="radio"><i></i>Price (Low - High)</a></label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><a href="/womens{% for i in products %}?PRICEHighTOLow={{i.id}}{% endfor %}&categorys={% if cat %}{{cat}}{%else%}{{cats}}{% endif %}&subid={{subid}}&suboff={{suboff}}&off={{off}}" style="color: gray"><input type="radio" name="radio"><i></i>Price (High - Low)</a></label> </div></div>
+				</div>
+				{% else %}
+
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8 products-right">
+			<div class="men-wear-top">
+
+				<div  id="top" class="callbacks_container">
+					<ul class="rslides" id="slider3">
+						<li>
+							<img class="img-responsive" src="{% static 'images/banner4.jpg' %}" alt=" "/>
+						</li>
+						<li>
+							<img class="img-responsive" src="{% static 'images/banner3.jpg' %}" alt=" "/>
+						</li>
+						<li>
+							<img class="img-responsive" src="{% static 'images/banner1.jpg' %}" alt=" "/>
+						</li>
+
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="men-wear-bottom">
+				<div class="col-sm-4 men-wear-left">
+					<img class="img-responsive" src="{% static 'images/bb1.jpg' %}" alt=" " />
+				</div>
+				<div class="col-sm-8 men-wear-right">
+					<h4>Exclusive Women's <span>Collections</span></h4>
+					<p>Today's women's clothing is a line of ultimate representation of a woman's body confidence that will make her all the more stylish and glamorous. Find about the lessons of women's clothing and the cardinal rules of dressing up in relation to your body shape as you read on.</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			{% if products %}
+			{% for prod in products %}
+		<div class="col-sm-4 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img style="width:200px;height:200px" src="{{prod.image}}" alt="" class="pro-image-front">
+										<img style="width:200px;height:200px" src="{{prod.image}}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href="/view?cat={{prod.id}}" class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+										{% if prod.suboffer == flatdiscount%}
+											<span class="product-new-top">Flat Discount</span>
+										{% elif prod.suboffer == summerdiscount%}
+										<span class="product-new-top">Summer Discount</span>
+										{% elif prod.suboffer == per50%}
+										<span class="product-new-top">Flat 50%</span>
+										{% elif prod.suboffer == per40%}
+										<span class="product-new-top">Flat 40%</span>
+										{% else %}
+											<span class="product-new-top">New Arrivals</span>
+										{% endif %}
+									</div>
+									<div class="item-info-product ">
+										<h4><a href="/view?cat={{prod.id}}">{{prod.name}}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{prod.price}} RS</span>
+											<del>{{prod.dprice}} RS</del>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+			{% endfor %}
+			{% else %}
+			<h3 style="position:relative;left:100px;top:100px"><span style="Color:red"><b>No Item/Offer in this Category. Coming Soon</b></span></h3>
+			{% endif %}
+							<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //mens -->
+<!--/grids-->
+<div class="coupons">
+		<div class="coupons-grids text-center">
+			<div class="w3layouts_mail_grid">
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>FREE SHIPPING</h3>
+						<p>Supreme Shopppy Offering free shipping All-over India</p>
+					</div>
+				</div>
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-headphones" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>24/7 SUPPORT</h3>
+						<p> 24/7 Custommer Support For All Customers</p>
+					</div>
+				</div>
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>MONEY BACK GUARANTEE</h3>
+						<p>Money Back Guarantee For Selected Products</p>
+					</div>
+				</div>
+					<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-gift" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>FREE GIFT COUPONS</h3>
+						<p>Free Gift Coupons For Selected Products</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
+</div>
+<!--grids-->
+<!-- footer -->
+<div class="footer">
+	<div class="footer_agile_inner_info_w3l">
+		<div class="col-md-3 footer-left">
+			<h2><a href="index"><span>S</span>upreme Shoppy </a></h2>
+			<p>Over its twenty-two plus year history, Supreme has worked with some of our generation's most groundbreaking designers - all who have helped continue to define its unique identity and attitude.</p>
+			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+															<li><a href="https://www.facebook.com" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.twitter.com" class="twitter">
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.instagram.com" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.pinterest.com" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Our <span>Information</span> </h4>
+					<ul>
+						<li><a href="index">Home</a></li>
+						<li><a href="mens">Men's Wear</a></li>
+						<li><a href="womens">Women's wear</a></li>
+						<li><a href="about">About</a></li>
+						<li><a href="typography">Dashboard</a></li>
+						<li><a href="contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-5 sign-gd-two">
+					<h4>Store <span>Information</span></h4>
+					<div class="w3-address">
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Phone Number</h6>
+								<p>+91 8848934844</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Email Address</h6>
+								<p>Email :<a href="mailto:vishnu21112001@gmail.com"> vishnu21112001@gmail.com</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Location</h6>
+								<p>Kanjani Road, Chungam, Ayyanthole,Thrissur, India
+
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+
+		<div class="clearfix"></div>
+
+</div>
+<!-- //footer -->
+
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+				<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						 // Slideshow 4
+						$("#slider3").responsiveSlides({
+							auto: true,
+							pager: true,
+							nav: false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+						$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+							}
+							});
+						});
+				</script>
+<script src="{% static 'js/modernizr.custom.js' %}"></script>
+	<!-- Custom-JavaScript-File-Links -->
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+	<!-- cart-js -->
+	<script src="{% static 'js/minicart.min.js' %}"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.indexOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+	<!-- //cart-js -->
+	<!---->
+							<script type='text/javascript'>//<![CDATA[
+							$(window).load(function(){
+							 $( "#slider-range" ).slider({
+										range: true,
+										min: 0,
+										max: 9000,
+										values: [ 1000, 7000 ],
+										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+										}
+							 });
+							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+							});//]]>
+
+							</script>
+						<script type="text/javascript" src="{% static 'js/jquery-ui.js' %}"></script>
+					 <!---->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+<!-- for bootstrap working -->
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

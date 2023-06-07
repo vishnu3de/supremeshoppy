@@ -1,0 +1,604 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+<title>Supreme Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<!--/tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+
+<!-- //tags -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<link href="{% static 'css/easy-responsive-tabs.css' %}" rel='stylesheet' type='text/css'/>
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!-- //for bootstrap working -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- header -->
+<div class="header" id="home">
+	<div class="container">
+		<ul>
+		    <li> <i class="fa fa-unlock-alt" aria-hidden="true"></i> Hello,<b><strong>{{request.user}}</strong></b></li>
+			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+		</ul>
+	</div>
+</div>
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+	<div class="header-bot_inner_wthreeinfo_header_mid">
+		<div class="col-md-4 header-middle">
+			<form method="get" action="/search" >
+					<input name="query"  type="search"  placeholder="Search here..." required/>
+					<input type="submit" value=" ">
+					<div class="clearfix"></div>
+
+			</form>
+		</div>
+		<!-- header-bot -->
+			<div class="col-md-4 logo_agile">
+				<h1><a href="index"><span>S</span>upreme Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+			</div>
+        <!-- header-bot -->
+		<div class="col-md-4 agileits-social top_content">
+						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
+						                                   <li class="share">Share On : </li>
+															<li><a href="https://www.facebook.com" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.twitter.com" class="twitter">
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.instagram.com" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.pinterest.com" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
+
+
+
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+	<div class="container">
+			<div class="top_nav_left">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list">
+					<li class="active menu__item"><a class="menu__link" href="index">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="about">About</a></li>
+					<li class="dropdown menu__item">
+						<a href="mens" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men's wear <span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="agile_inner_drop_nav_info">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<a href="mens"><img src="{% static 'images/top2.jpg' %}" alt=" "/></a>
+									</div>
+									<div class="col-sm-3 multi-gd-img">
+										{% for cat in mcategory %}
+										{% for i in cat.category_set.all %}
+
+										<ul class="multi-column-dropdown">
+											<li><a href="/mens?category={{i.id}}">{{i.name}}</a></li>
+
+										</ul>
+										{% endfor %}
+										{% endfor %}
+									<div class="clearfix"></div>
+								</div>
+							 </ul>
+					</li>
+					<li class="dropdown menu__item">
+						<a href="womens" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" >Women's wear <span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="agile_inner_drop_nav_info">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<a href="womens"><img src="{% static 'images/top1.jpg' %}" alt=" "/></a>
+									</div>
+									<div class="col-sm-3 multi-gd-img">
+										{% for cat in wcategory %}
+										{% for i in cat.category_set.all %}
+
+										<ul class="multi-column-dropdown">
+											<li><a href="/womens?category={{i.id}}">{{i.name}}</a></li>
+
+										</ul>
+										{% endfor %}
+										{% endfor %}
+									<div class="clearfix"></div>
+								</div>
+							 </ul>
+					</li>
+					<li class="menu__item dropdown">
+					<li class=" menu__item"><a class="menu__link" href="typography">Dashboard</a></li>
+					</li>
+					<li class=" menu__item"><a class="menu__link" href="contact">Contact</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+		</div>
+		<div class="top_nav_right">
+			<div class="wthreecartaits wthreecartaits2 cart cart box_1">
+						<form action="cart" method="post" class="last">
+							{% csrf_token %}
+						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+					<span class="badge badge-secondary">{{request.session.cart|length}}</span></form>
+						</div>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<!-- //banner-top -->
+<!--/single_page-->
+       <!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
+		<div class="container">
+			<h3>Single <span>Page </span></h3>
+			<!--/w3_short-->
+				 <div class="services-breadcrumb">
+						<div class="agile_inner_breadcrumb">
+
+						   <ul class="w3_short">
+								<li><a href="index">Home</a><i>|</i></li>
+								<li>Single Page</li>
+							</ul>
+						 </div>
+				</div>
+	   <!--//w3_short-->
+	</div>
+</div>
+
+  <!-- banner-bootom-w3-agileits -->
+<div class="banner-bootom-w3-agileits">
+	<div class="container">
+	     <div class="col-md-4 single-right-left ">
+			<div class="grid images_3_of_2">
+				<div class="flexslider">
+					<ul class="slides">
+						<li data-thumb="/{{prod.image}}">
+							<div class="thumb-image"> <img src="/{{prod.image}}" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+						<li data-thumb="/{{prod.image1}}">
+							<div class="thumb-image"> <img src="/{{prod.image1}}" data-imagezoom="true" class="img-responsive"> </div>
+						</li>	
+						<li data-thumb="/{{prod.image2}}">
+							<div class="thumb-image"> <img src="/{{prod.image2}}" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-8 single-right-left simpleCart_shelfItem">
+					<h3>{{prod.name}}</h3>
+					<p><span class="item_price">{{prod.price}} RS</span> <del>{{prod.dprice}} RS</del></p>
+					<div class="rating1">
+						<span class="starRating">
+							<input id="rating5" type="radio" name="rating" value="5">
+							<label for="rating5">5</label>
+							<input id="rating4" type="radio" name="rating" value="4">
+							<label for="rating4">4</label>
+							<input id="rating3" type="radio" name="rating" value="3" checked="">
+							<label for="rating3">3</label>
+							<input id="rating2" type="radio" name="rating" value="2">
+							<label for="rating2">2</label>
+							<input id="rating1" type="radio" name="rating" value="1">
+							<label for="rating1">1</label>
+						</span>
+					</div><br>
+			<form action="{% url 'cart_add' prod.id %}" method="post">
+				{% csrf_token %}
+				{% if var%}
+			<select class="form-select form-select-sm mt-3" style="width:100px" name="sise">
+					{% for variant in var %}
+						<option value="{{variant.name}}">{{variant.name}}</option>
+					{% endfor %}
+
+			</select>
+				{% else %}
+				<h4 style="color:red;"> <i>Product is not available for order</i></h4>
+				{% endif %}
+
+
+			<br><br><p><li>Brand : <strong>{{prod.brand}}</strong></li></p>
+			<p><li>We Promise :<small> We assure the authenticity and quality of our products</small></li></p>
+					<div class="occasion-cart">
+						{% if var%}
+						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+																<fieldset>
+																	<input type="submit" name="submit" value="Add to cart" class="button"></a>
+																</fieldset>
+														</div>
+						{% endif %}
+						</form>
+																			
+					</div>
+
+
+					
+		      </div>
+	 			<div class="clearfix"> </div>
+				<!-- /new_arrivals --> 
+	<div class="responsive_tabs_agileits"> 
+				<div id="horizontalTab">
+						<ul class="resp-tabs-list">
+							<li>Description</li>
+						</ul>
+					<div class="resp-tabs-container">
+					<!--/tab_one-->
+					   <div class="tab1">
+
+							<div class="single_page_agile_its_w3ls">
+							   <p>{{prod.description}}</p>
+
+							</div>
+						</div>
+						<!--//tab_one-->
+					</div>
+				</div>	
+			</div>
+	<!-- //new_arrivals --> 
+	  	<!--/slider_owl-->
+	
+			<div class="w3_agile_latest_arrivals">
+			<h3 class="wthree_text_info">Featured <span>Arrivals</span></h3>
+				<div class="col-md-3 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img src="{{data1.image}}" alt="" class="pro-image-front">
+										<img src="{{data1.image}}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href=/view?cat={{data1.id}} class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+
+									</div>
+									<div class="item-info-product ">
+										<h4><a href=/view?cat={{data1.id}}>{{data1.name}}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{data1.price}} RS</span>
+											<del>{{data1.dprice}} RS</del>
+										</div>
+
+
+									</div>
+								</div>
+				</div>
+				<div class="col-md-3 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img src="{{data2.image}}" alt="" class="pro-image-front">
+										<img src="{{data2.image}}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href=/view?cat={{data2.id}} class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+
+									</div>
+									<div class="item-info-product ">
+										<h4><a href=/view?cat={{data2.id}}>{{data2.name}}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{data2.price}} RS</span>
+											<del>{{data2.dprice}} RS</del>
+										</div>
+
+
+									</div>
+								</div>
+				</div>
+				<div class="col-md-3 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img src="{{data3.image}}" alt="" class="pro-image-front">
+										<img src="{{data3.image}}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href=/view?cat={{data3.id}} class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+
+									</div>
+									<div class="item-info-product ">
+										<h4><a href=/view?cat={{data3.id}}>{{data3.name}}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{data3.price}} RS</span>
+											<del>{{data3.dprice}} RS</del>
+										</div>
+
+
+									</div>
+								</div>
+				</div>
+				<div class="col-md-3 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img src="{{data4.image}}" alt="" class="pro-image-front">
+										<img src="{{data4.image}}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href=/view?cat={{data4.id}} class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+
+									</div>
+									<div class="item-info-product ">
+										<h4><a href=/view?cat={{data4.id}}>{{data4.name}}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{data4.price}} RS</span>
+											<del>{{data4.dprice}} RS</del>
+										</div>
+
+
+									</div>
+								</div>
+				</div>
+
+	        </div>
+ </div>
+<!--//single_page-->
+<!--/grids-->
+<div class="coupons">
+		<div class="coupons-grids text-center">
+			<div class="w3layouts_mail_grid">
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>FREE SHIPPING</h3>
+						<p>Supreme Shopppy Offering free shipping All-over India</p>
+					</div>
+				</div>
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-headphones" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>24/7 SUPPORT</h3>
+						<p> 24/7 Custommer Support For All Customers</p>
+					</div>
+				</div>
+				<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>MONEY BACK GUARANTEE</h3>
+						<p>Money Back Guarantee For Selected Products</p>
+					</div>
+				</div>
+					<div class="col-md-3 w3layouts_mail_grid_left">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
+						<i class="fa fa-gift" aria-hidden="true"></i>
+					</div>
+					<div class="w3layouts_mail_grid_left2">
+						<h3>FREE GIFT COUPONS</h3>
+						<p>Free Gift Coupons For Selected Products</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
+</div>
+<!--grids-->
+<!-- footer -->
+<div class="footer">
+	<div class="footer_agile_inner_info_w3l">
+		<div class="col-md-3 footer-left">
+			<h2><a href="index"><span>S</span>upreme Shoppy </a></h2>
+			<p>Over its twenty-two plus year history, Supreme has worked with some of our generation's most groundbreaking designers - all who have helped continue to define its unique identity and attitude.</p>
+			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+															<li><a href="https://www.facebook.com" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.twitter.com" class="twitter">
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.instagram.com" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="https://www.pinterest.com" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Our <span>Information</span> </h4>
+					<ul>
+						<li><a href="index">Home</a></li>
+						<li><a href="mens">Men's Wear</a></li>
+						<li><a href="womens">Women's wear</a></li>
+						<li><a href="about">About</a></li>
+						<li><a href="typography">Dashboard</a></li>
+						<li><a href="contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-5 sign-gd-two">
+					<h4>Store <span>Information</span></h4>
+					<div class="w3-address">
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Phone Number</h6>
+								<p>+91 8848934844</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Email Address</h6>
+								<p>Email :<a href="mailto:vishnu21112001@gmail.com"> vishnu21112001@gmail.com</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Location</h6>
+								<p>Kanjani Road, Chungam, Ayyanthole,Thrissur, India
+								
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+
+		<div class="clearfix"></div>
+
+</div>
+<!-- //footer -->
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<script src="{% static 'js/modernizr.custom.js' %}"></script>
+	<!-- Custom-JavaScript-File-Links --> 
+	<!-- cart-js -->
+	<script src="{% static 'js/minicart.min.js' %}"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.indexOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+	<!-- //cart-js --> 
+	<!-- single -->
+<script src="{% static 'js/imagezoom.js' %}"></script>
+<!-- single -->
+<!-- script for responsive tabs -->						
+<script src="{% static 'js/easy-responsive-tabs.js' %}"></script>
+<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion           
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+</script>
+<!-- FlexSlider -->
+<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+						<script>
+						// Can also be used with $(document).ready()
+							$(window).load(function() {
+								$('.flexslider').flexslider({
+								animation: "slide",
+								controlNav: "thumbnails"
+								});
+							});
+						</script>
+					<!-- //FlexSlider-->
+<!-- //script for responsive tabs -->		
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+<!-- for bootstrap working -->
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
